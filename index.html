@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanuga Nimsan | Bioinformatics</title>
+    <style>
+        :root {
+            --bg-color: #0a192f;
+            --text-primary: #e6f1ff;
+            --text-secondary: #8892b0;
+            --accent: #64ffda;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: 'Courier New', monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            z-index: 2;
+            text-align: center;
+            max-width: 800px;
+            padding: 2rem;
+            background: rgba(10, 25, 47, 0.85);
+            border: 1px solid var(--text-secondary);
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(100, 255, 218, 0.1);
+            backdrop-filter: blur(5px);
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent);
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            font-weight: normal;
+            border-bottom: 1px solid var(--text-secondary);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .bio {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* DNA Animation Background */
+        .dna-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            opacity: 0.15;
+            background: repeating-linear-gradient(
+                90deg,
+                transparent 0,
+                transparent 40px,
+                var(--accent) 40px,
+                var(--accent) 41px
+            );
+            animation: scan 10s linear infinite;
+        }
+
+        @keyframes scan {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-41px); }
+        }
+
+        /* Typing Effect Cursor */
+        .typing-effect {
+            border-right: 2px solid var(--accent);
+            white-space: nowrap;
+            overflow: hidden;
+            display: inline-block;
+            animation: blink 0.75s step-end infinite;
+        }
+
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+
+        .social-links {
+            margin-top: 2rem;
+        }
+        
+        .social-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--accent);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="dna-bg"></div>
+
+    <div class="container">
+        <h1>Sanuga Nimsan</h1>
+        <h2>Bioinformatics Special Student</h2>
+        
+        <div class="bio">
+            <p>
+                <span class="typing-effect">Hi, I'm Sanuga Nimsan.</span>
+            </p>
+            <p>
+                Currently studying at the <br>
+                <strong style="color: var(--accent)">University of Colombo Faculty of Science</strong>.
+            </p>
+        </div>
+
+        <div class="social-links">
+            <a href="#">GitHub</a>
+            <a href="#">LinkedIn</a>
+            <a href="mailto:contact@sanuga.uk">Email</a>
+        </div>
+    </div>
+
+</body>
+</html>
